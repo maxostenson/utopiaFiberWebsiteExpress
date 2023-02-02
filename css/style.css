@@ -1,0 +1,54 @@
+.headerBar {
+    font-size: 45pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 0.5em;
+    background-color: #D9D9D9;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.categoryHeader {
+    font-size: 72pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.buttonList {
+    width: 95%;
+    height: auto;
+    padding-left: 5%;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #4F92FF;
+    color: #FFFFFF;
+    border-radius: 12px;
+    height: 100px;
+    font-size: 48pt;
+    margin-bottom: 40px;
+}
+
+.parkAddress {
+    font-size: 35pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.court {
+    width: 27%;
+    float: left;
+}
+
+.courtOccupiedIndicator {
+    margin-left: 76%;
+    width: 50px;
+    height: 50px;
+}
+
+img.courtImage {
+    width: 450px;
+}

@@ -1,0 +1,18 @@
+doctype html 
+html 
+    head 
+        title Parks
+        link(rel='stylesheet' type='text/css' href='/style.css')
+    body 
+        .headerBar 
+            p Utopia Smart Pickelball Courts
+        .categoryHeader
+            p Parks
+        .buttonList
+            each park in cityParkList
+                button.btn-primary(onclick=`goToPark(${park.parkId})`) #{park.parkName}
+
+        script.
+            function goToPark(parkId) {
+                window.location.href = `/park/${parkId}`
+            }

@@ -1,0 +1,18 @@
+doctype html 
+html 
+    head 
+        title Cities
+        link(rel='stylesheet' type='text/css' href='/style.css')
+    body 
+        .headerBar 
+            p Utopia Smart Pickelball Courts
+        .categoryHeader
+            p Cities
+        .buttonList
+            each city in cityList
+                button.btn-primary(onclick=`goToCity(${city.cityId})`) #{city.cityName}
+
+        script.
+            function goToCity(cityId) {
+                window.location.href = `/city/${cityId}`
+            }
