@@ -1,1 +1,18 @@
-h1 Hello, World!
+doctype html 
+html 
+    head 
+        title Courts
+        link(rel='stylesheet' type='text/css' href='/style.css')
+    body 
+        .headerBar 
+            p Utopia Smart Pickelball Courts
+        .categoryHeader
+            p=parkName
+        .courtList
+            each court in parkCourtList
+                .court
+                    img.courtImage(src='/images/court.png')
+                    if court.occupied
+                        img.courtOccupiedIndicator(src='/images/alpha-x-circle-outline.svg')
+                    else 
+                        img.courtOccupiedIndicator(src='/images/check-circle-outline.svg')

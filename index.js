@@ -12,6 +12,7 @@ app.set('views', './views');
 
 //Importing files
 app.use(express.static(__dirname + '/css'));
+app.use(express.static(__dirname + '/public'));
 
 //Seting up database connection
 const connection = mysql.createConnection({
@@ -66,7 +67,7 @@ app.get('/city/:cityid', function (req, res) {
     connection.query(query, function (err, rows, fields) {
         if (err) throw err;
 
-        //Turn each retrieved row into object and add to city array
+        //Turn each retrieved row into object and add to park array
         rows.forEach(row => {
             var parkObject = {
                 'parkId': row.parkId,
@@ -84,7 +85,37 @@ app.get('/city/:cityid', function (req, res) {
 
 //Park route
 app.get('/park/:parkid', function (req, res) {
-    res.render('park')
+    //Get park name
+    var parkName = null;
+    getParkQuery = 'SELECT parkName FROM parks WHERE parkId = ' + req.params.parkid;
+    connection.query(getParkQuery, function (err, rows, fields) {
+        rows.forEach(row => {
+            parkName = row.parkName;
+        });
+    });
+    
+    //Get courts
+    var courtList = [];
+
+    //Fetch courts from database
+    query = 'SELECT courtId, occupied FROM courts WHERE ownerid = ' + req.params.parkid;
+    connection.query(query, function (err, rows, fields) {
+        if (err) throw err;
+
+        //turn each row into an object and add to court list
+        rows.forEach(row => {
+            var courtObject = {
+                'courtId': row.courtId,
+                'occupied': row.occupied
+            };
+            courtList.push(courtObject);
+        });
+
+        res.render('park', {
+            parkName: parkName,
+            parkCourtList: courtList
+        });
+    });
 });
 
 //Start server
