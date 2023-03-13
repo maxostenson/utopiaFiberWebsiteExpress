@@ -118,5 +118,17 @@ app.get('/park/:parkid', function (req, res) {
     });
 });
 
+//API route
+app.get('/updateCourtStatus/:courtId/:occupied', function(req, res) {
+    //Create query with given parameters
+    query = 'UPDATE courts SET occupied = ' + req.params.occupied + ' WHERE courtId = ' + req.params.courtId;
+    connection.query(query, (err) => {
+        if (err) {
+            res.send("ERROR: " + err);
+        }
+    });
+    res.send("Success");
+})
+
 //Start server
 app.listen(3000);
