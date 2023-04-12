@@ -6,22 +6,23 @@ html
     body 
         .headerBar 
             p Utopia Smart Pickelball Courts
-        .categoryHeader
-            p=parkName
-        .courtList
-            each court in parkCourtList
-                .court
-                    img.courtImage(src='/images/court.png')
-                    if court.occupied == 0
-                        div
-                            img.courtOccupiedIndicator.courtFree(src='/images/check-circle-outline.svg') 
-                            p.availableText.statusText Available
-                    else if court.occupied == 1
-                        img.courtOccupiedIndicator.courtOccupied(src='/images/alpha-x-circle-outline.svg')
-                        p.busyText.statusText Occupied
-                    else
-                        img.courtOccupiedIndicator.courtNoSignal(src='/images/no-signal-icon.svg')
-                        p.sensorErrorText.statusText Disconnected
+        .mainContent
+            .categoryHeader
+                p=parkName
+            .courtList
+                each court in parkCourtList
+                    .court
+                        img.courtImage(src='/images/court.png')
+                        if court.occupied == 0
+                            div
+                                img.courtOccupiedIndicator.courtFree(src='/images/check-circle-outline.svg') 
+                                p.availableText.statusText Available
+                        else if court.occupied == 1
+                            img.courtOccupiedIndicator.courtOccupied(src='/images/alpha-x-circle-outline.svg')
+                            p.busyText.statusText Occupied
+                        else
+                            img.courtOccupiedIndicator.courtNoSignal(src='/images/no-signal-icon.svg')
+                            p.sensorErrorText.statusText Disconnected
         .footerBar
             button.backButton.btn-secondary(onclick=`history.back()`)
                 img.footerImage.backImage(src='/images/back.png')
