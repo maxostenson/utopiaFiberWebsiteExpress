@@ -118,6 +118,13 @@ app.get('/park/:parkid', function (req, res) {
     });
 });
 
+//Info route
+app.get('/info', function (req, res) {
+
+    //Render info page
+    res.render('info');
+})
+
 //API route
 app.post('/updateCourtStatus/:courtId/:occupied', function(req, res) {
     //Create query with given parameters

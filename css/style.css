@@ -7,6 +7,25 @@
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
+.footerBar {
+    font-size: 45pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 0.5em;
+    background-color: #D9D9D9;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 1.5em;
+    width: 94%
+}
+
+.footerImage {
+    width: 64px;
+    height: 64px;
+}
+
 .categoryHeader {
     font-size: 72pt;
     font-family: Arial, Helvetica, sans-serif;
@@ -22,13 +41,21 @@
 }
 
 .btn-primary {
-    width: 100%;
+    width: 95%;
     background-color: #4F92FF;
     color: #FFFFFF;
     border-radius: 12px;
     height: 100px;
     font-size: 48pt;
     margin-bottom: 40px;
+}
+
+.btn-secondary {
+    width: 15%;
+    height: 96px;
+    background-color: #D9D9D9;
+    color: #FFFFFF;
+    border-radius: 12px;
 }
 
 .parkAddress {
@@ -41,6 +68,7 @@
 .court {
     width: 27%;
     float: left;
+    text-align: center;
 }
 
 .courtOccupiedIndicator {
@@ -51,4 +79,36 @@
 
 img.courtImage {
     width: 450px;
+}
+
+.statusText {
+    font-size: 18pt;
+}
+
+.availableText {
+    color: #19B10D;
+    padding-left: 70.5%;
+}
+
+.busyText {
+    color: #CC0303;
+    padding-left: 70.5%;
+}
+
+.sensorErrorText {
+    color: #000000;
+    padding-left: 65%;
+}
+
+.backButton {
+    float: left;
+}
+
+.infoButton {
+    float: right;
+}
+
+.infoText {
+    font-size: 24pt;
+    padding: 1em;
 }

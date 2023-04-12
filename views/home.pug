@@ -11,6 +11,9 @@ html
         .buttonList
             each city in cityList
                 button.btn-primary(onclick=`goToCity(${city.cityId})`) #{city.cityName}
+        .footerBar
+            button.infoButton.btn-secondary(onclick=`window.location.href = '/info'`)
+                img.footerImage.infoImage(src='/images/info.png')
 
         script.
             function goToCity(cityId) {

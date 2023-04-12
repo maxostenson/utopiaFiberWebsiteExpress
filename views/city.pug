@@ -11,8 +11,16 @@ html
         .buttonList
             each park in cityParkList
                 button.btn-primary(onclick=`goToPark(${park.parkId})`) #{park.parkName}
+        .footerBar
+            button.backButton.btn-secondary(onclick=`history.back()`)
+                img.footerImage.backImage(src='/images/back.png')
+            button.infoButton.btn-secondary(onclick=`window.location.href = '/info'`)
+                img.footerImage.infoImage(src='/images/info.png')
 
         script.
             function goToPark(parkId) {
                 window.location.href = `/park/${parkId}`
+            }
+            function goBack() {
+                history.back();
             }
